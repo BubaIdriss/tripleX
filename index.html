@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripleX Delivery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+
+        }
+
+        .container {
+            background-color: #ffff;
+            height: 100%;
+        }
+
+        header {
+            position: relative;
+            /* Make it a positioned element */
+            background-image: url('static/img/dly0.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 500px;
+            z-index: 1;
+            border-bottom: 5px solid rgb(82, 255, 82);
+            /* Position behind the text */
+
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.692);
+            /* Dim effect */
+            z-index: 0;
+            /* Place behind the text */
+        }
+
+        .header_text {
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+        }
+
+        .head_content {
+            color: #ffffff;
+            position: relative;
+            /* Bring it above the pseudo-element */
+            z-index: 1;
+            /* Ensure text is above the dim layer */
+        }
+
+        .contact_us {
+            padding: 8px 18px;
+            border: 2px solid rgb(82, 255, 82);
+            border-radius: 10px;
+            background-color: rgb(82, 255, 82);
+            color: #fff;
+            text-decoration: none;
+            transition: 0.5s;
+        }
+
+        .contact_us:hover {
+            color: #fff;
+            background-color: transparent;
+        }
+
+        .lang {
+            border: none;
+            padding: 3px;
+            border-radius: 15px;
+            background-color: rgba(141, 255, 141, 0.664);
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            width: 100%;
+            z-index: 10;
+            position: relative;
+            background-color: rgba(141, 255, 141, 0.664);
+            border-bottom: 5px solid rgb(82, 255, 82);
+        }
+
+        .nav_list {
+            margin-top: 10px;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+        }
+
+        .nav_list a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: #000;
+            padding: 10px;
+            transition: 0.3s ease-in;
+            border-radius: 10px;
+        }
+
+        .nav_list a:hover {
+            background-color: rgb(82, 255, 82);
+            color: #fff;
+        }
+
+        h5 {
+            color: rgb(82, 255, 82);
+        }
+
+        span {
+            color: rgb(82, 255, 82);
+            font-size: 55px;
+        }
+
+        .services {
+            padding: 0;
+        }
+
+        .section_1 {
+            padding: 15px;
+            background-color: #f8f7f7;
+            margin: 10px;
+            border-radius: 10px;
+            border-bottom: 1px solid rgb(82, 255, 82);
+            width: 90%;
+        }
+
+        .section_1 p {
+            margin-top: 10px;
+        }
+
+        .service_1 {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .service_1 img {
+            width: 100px;
+            height: auto;
+            margin: 15px;
+        }
+
+        .section_2 {
+            position: relative;
+            /* Make it a positioned element */
+            background-image: url('static/img/dly1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 500px;
+            z-index: 1;
+            border-bottom: 5px solid rgb(82, 255, 82);
+        }
+
+        .section_2::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.363);
+            /* Dim effect */
+            z-index: 0;
+            /* Place behind the text */
+        }
+
+        .section_2_text {
+            color: #ffffff;
+            display: flex;
+            font-size: 30px;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            /* Bring it above the pseudo-element */
+            z-index: 1;
+            /* Ensure text is above the dim layer */
+
+        }
+
+        /* Section 3 */
+        .section_3 {
+            position: relative;
+            /* Make it a positioned element */
+            background-image: url('static/img/dly2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 500px;
+            z-index: 1;
+            border-bottom: 5px solid rgb(82, 255, 82);
+        }
+
+        footer {
+            background-color: rgb(82, 255, 82);
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        footer img {
+            width: 120px;
+            height: auto;
+        }
+
+        .footer_container {
+            padding: 8px;
+        }
+
+        input {
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .email {
+            width: 75%;
+        }
+
+        .footer_content {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .footer_content a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            transition: 0.5s;
+            border-radius: 10px;
+        }
+
+        .footer_content a:hover {
+            background-color: rgb(73, 211, 73);
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <nav>
+                <img class="logo" src="static/img/X.png" alt="TripleX">
+                <div class="nav_list">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <select class="lang" onchange="setLanguage(this.value)">
+                        <option value="en" selected>English</option>
+                        <option value="fr">French</option>
+                        <option value="hausa">Hausa</option>
+                        <option value="igbo">Igbo</option>
+                        <option value="yoroba">Yoroba</option>
+                    </select>
+                </div>
+            </nav>
+            <div class="header_text">
+                <div class="head_content">
+                    <h2 data-i18n="welcome">Welcome To</h2>
+                    <h1>Triple<span>X</span>
+                        Delivery
+                    </h1>
+                    <h5><i>From Your Door To Theirs</i></h5>
+                    <br><br>
+                    <a class="contact_us" href="contact.html" data-i18n="contact_us">Contact Us</a>
+                </div>
+            </div>
+        </header>
+
+        <br><br>
+        <div class="services">
+            <div class="service_1">
+                <img src="static/img/fast_delivery.png">
+                <p>
+                    <b style="font-size: 18px;" data-i18n="services.fast_delivery">Fast Delivery</b>
+                    <br>
+                    <small style="color: #646464;" data-i18n="services.service_details.0">
+                        Experience quick and efficient delivery with TripleX. We prioritize speed without compromising
+                        on the quality of service, ensuring that every package reaches you in the shortest possible
+                        time.
+                    </small>
+                </p>
+            </div>
+
+            <div class="service_1">
+                <img src="static/img/1067555.png">
+                <p>
+                    <b style="font-size: 18px;" data-i18n="services.package_safety">Package Safety</b>
+                    <br>
+                    <small style="color: #646464;" data-i18n="services.service_details.1">
+                        Your packages are handle with utmost care. We ensure that each item is securely packed,
+                        transported, and delivered in perfect condition, providing peace of mind for senders and
+                        receivers alike.
+                    </small>
+                </p>
+            </div>
+
+            <div class="service_1">
+                <img src="static/img/time2.webp">
+                <p>
+                    <b style="font-size: 18px;" data-i18n="services.on_time">On Time</b>
+                    <br>
+                    <small style="color: #646464;" data-i18n="services.service_details.2">
+                        We value your time and strive for punctuality. our commitment to timely deliveries means you can
+                        rely on us to get your packages to their destinations right on schedule.
+                    </small>
+                </p>
+            </div>
+        </div>
+
+        <section class="section_2">
+            <div class="section_2_text">
+                <h1 data-i18n="get_the_fast">GET THE FASTEST <br> <span>PRODUCT DELIVERY</span></h1>
+            </div>
+        </section>
+
+        <section class="section_1">
+            <h2 style="color: rgb(82, 255, 82);">About Us</h2>
+            <p data-i18n="about_text">
+                TripleX is a fast-growing delivery service dedicated to connecting people and businesses with reliable,
+                efficient, and affordable delivery solutions. <br><br> TripleX provides a trusted solution tailored to
+                meet
+                the diverse of our community.
+            </p>
+        </section>
+
+        <section class="section_1">
+            <h2 style="color: rgb(82, 255, 82);">Vision</h2>
+            <p data-i18n="vision_text">
+                To be the leading delivery service platform that empowers communities through accessible, reliable, and
+                innovative logistics solutions, transforming the way people and businesses connect across distances.
+            </p>
+        </section>
+
+        <section class="section_1">
+            <h2 style="color: rgb(82, 255, 82);">Mission</h2>
+            <p data-i18n="mission_text.0">
+                1. To deliver exceptional service by prioritizing the safety and timely arrival of each package.
+            </p>
+            <p data-i18n="mission_text.1">
+                2. To build a reliable network of skilled delivery personnel to enhance our service reach and
+                efficiency.
+            </p>
+            <p data-i18n="mission_text.2">
+                3. To continuously innovate and adopt our technologies that improve our delivery solutions, making
+                TripleX the go-to choice for delivery across diverse sectors.
+            </p>
+            <p data-i18n="mission_text.3">
+                4. To create meaningful connections and foster a sence of community through our services, buliding trust
+                and satisfaction with each delivery.
+            </p>
+        </section>
+
+        <section class="section_3">
+            <!-- Background Image add from css -->
+        </section>
+        <hr>
+        <br>
+        <hr>
+        <br>
+        <hr>
+        <footer>
+            <div class="footer_container">
+                <img style="width: 200px; height: auto; margin-bottom: 30px;" src="static/img/X.png">
+                <h2>Newsletter</h2>
+                <form action="" method="post">
+                    <input type="email" class="email" name="email" placeholder="Enter Email">
+                    <input type="submit" value="Subscribe">
+                </form>
+                <br><br>
+                <h2>Contact Information</h2>
+                <br>
+                <div class="contact">
+                    <strong>Phone:</strong> <a href="#">+234-704-068-9431</a><br>
+                    <strong>Email:</strong> <a href="#">abidbulimitedco@gmail.com</a>
+                </div>
+                <div class="footer_content">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="https://web.facebook.com/profile.php?id=61568111256489" target="_blank">Facebook</a>
+                    <a href="https://www.instagram.com/tripleX.delivery/" target="_blank">Instagram</a>
+                    <a href="#">X</a>
+                </div>
+            </div>
+            <center>
+                <small>© Triple - All Right Reserved</small>
+            </center>
+        </footer>
+    </div>
+    <script src="translations.js"></script>
+</body>
+
+</html>
